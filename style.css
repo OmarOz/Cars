@@ -1,0 +1,259 @@
+body{
+    font-family: 'Big Shoulders Display', cursive;
+        font-family: 'Lexend Deca', sans-serif;
+        font-family: 'Oswald', sans-serif;
+        font-family: 'Work Sans', sans-serif;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    
+}
+
+.container div{
+    width: 315px;
+    height: 550px;
+    padding: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    transition-duration: 0.4s;
+    transition-timing-function:cubic-bezier(0.5, 0.54, 0, 0.87);
+    transform: perspective(0px) translate3d(0,0,0);
+    position: relative;
+    z-index: 0;
+    box-shadow: 0px 0px 30px 3px black;
+   
+}
+
+.container div:hover {
+    transform: perspective(0px) translate3d(0, 0, 0.05px);
+    z-index: 5;
+}
+
+.container div img{
+ width:75px;
+}
+
+
+
+.container h2 {
+    color: white;
+    font-family: 'Big Shoulders Display';
+    font-weight: 700;
+    font-size: 40px;
+}
+
+
+.container p {
+    color: hsla(0, 0%, 100%, 0.75);
+    font-family: 'Lexend Deca';
+    font-weight: 200;
+    font-size: 15px;
+    
+}
+
+.container button {
+ 
+   background-color: hsl(0, 0%, 95%);
+    width: 150px;
+    height: 50px;
+    border-color: transparent;
+    border-radius: 25px;
+    font-family: 'Lexend Deca';
+    font-weight: 200;
+    margin-top: 90px;
+    position: absolute;
+    bottom: 75px;
+}
+
+
+.sedans{
+    background-color: hsl(31, 77%, 52%);
+    border-radius: 10px 0 0 10px ;
+
+}
+.sedans:hover{
+    animation-name: borderSedan;
+    animation-duration: 7s;
+    animation-delay: 0.5s;
+    animation-timing-function: cubic-bezier(0.28, 0.59, 0.45, 0.73);
+    animation-iteration-count:infinite;
+    animation-direction: alternate;
+}
+
+.sedans button{
+    color: hsl(31, 77%, 52%);
+}
+
+
+
+.suvs{
+    background-color: hsl(184, 100%, 22%);
+}
+
+.suvs:hover {
+    animation-name: borderSuv;
+    animation-duration: 7s;
+    animation-delay: 0.5s;
+    animation-timing-function: cubic-bezier(0.28, 0.59, 0.45, 0.73);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.suvs button {
+    color: hsl(184, 100%, 22%);
+}
+
+.luxury{
+    background-color: hsl(179, 100%, 13%);
+    border-radius: 0px 10px 10px 0px;
+}
+
+.luxury:hover {
+    animation-name: borderLuxury;
+    animation-duration: 7s;
+    animation-delay: 0.5s;
+    animation-timing-function: cubic-bezier(0.28, 0.59, 0.45, 0.73);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+
+.luxury button {
+    color: hsl(179, 100%, 13%);
+    
+}
+
+
+@keyframes borderSedan {
+    0%{
+        border-radius: 10px 0 0 10px;
+    }
+    100%{
+        border-radius: 50px 50px 50px 50px
+    }
+}
+
+@keyframes borderSuv {
+    0% {
+        border-radius: 0 0 0 0;
+    }
+
+    100% {
+        border-radius: 50px 50px 50px 50px
+    }
+}
+
+
+@keyframes borderLuxury {
+    0% {
+        border-radius: 0 10px 10px 0;
+    }
+
+    100% {
+        border-radius: 50px 50px 50px 50px
+    }
+}
+
+
+
+/*very-small(mobile)*/
+
+@media (max-width:767px) {
+    .container {
+        flex-direction: column;
+        justify-self: center;
+        width: 280px;
+    }
+
+    .container div {
+        width: 200px;
+        height: 200px;
+        border-radius: 10px;
+    }
+    .container h2{
+        text-align: center;
+        font-size: 35px;
+    }
+    .container img{
+        position: absolute;
+        left: 25%;
+        transform: translate(-50%);
+        top: 20px;
+    }
+    .container button{
+        width: 115px;
+        height: 45px;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+        bottom: 25px;
+    }
+
+    .container p {
+        display: none;
+    }
+}
+
+
+/*small*/
+
+@media (min-width:768px) {
+    .container {
+        width: 750px;
+    }
+
+    .container div{
+        height: 350px;
+    }
+    .container p{
+        display: none;
+    }
+}
+
+/*mediam*/
+
+@media (min-width:992px)  {
+    .container {
+        width: 970px;
+    }
+
+    .container div {
+       height: 550px;
+    }
+    
+    .container p {
+    display: block;
+    }
+}
+
+
+/*large*/
+
+@media (min-width:1200px) {
+    .container {
+        width: 1170px;
+    }
+
+    .container div {
+        height: 550px;
+    }
+    
+    .container p {
+        display: block;
+    }
+}
+
